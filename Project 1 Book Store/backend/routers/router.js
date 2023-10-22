@@ -1,8 +1,8 @@
 import express from "express";
-import { Book } from "../models/bookModels.js";
-import { Laptop } from "../models/laptopModels.js";
+import { Book } from "../models/bookModels.js";  
+// import { Laptop } from "../models/laptopModels.js";
 
-const router = express.Router();
+const router = express.Router(); 
 
 // posting book into db
 router.post("/", async (req, res) => {
@@ -68,9 +68,9 @@ router.put("/:id", async (req, res) => {
     const { id } = req.params;
     const result = await Book.findByIdAndUpdate(id, req.body);
     if (result) {
-      return res.status(200).send({ message: "Successfuly updatated" });
+      return res.status(200).send({ message: "Update successfull" });
     }
-    return res.status(404).send({ message: "Unsuccessfull" });
+    return res.status(404).send({ message: "The Id Dose Not Exisit's " });
   } catch (error) {
     console.log(error.message);
     return res.status(404).send({ message: error.message });
@@ -85,7 +85,7 @@ router.delete("/:id", async (req, res) => {
     if (!result) {
       return res.status(404).send({ message: "Delete was Unsuccessfull" });
     }
-    return res.status(200).json({ message: "Successfuly Deleted" });
+    return res.status(200).send({ message: "Successfuly Deleted" });
   } catch (error) {
     console.log(error.message);
     return res.status(404).send({ message: error.message });

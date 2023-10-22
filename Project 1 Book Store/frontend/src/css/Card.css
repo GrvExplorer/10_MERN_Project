@@ -1,0 +1,38 @@
+/* BookCard.css */
+.book-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin: 10px;
+    max-width: 300px;
+    overflow: hidden;
+  }
+  
+  .book-image {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .book-details {
+    padding: 10px;
+  }
+
+  
+  .book-title {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .book-author {
+    color: #555;
+    margin: 0;
+  }
+  
+  .book-description {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

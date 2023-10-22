@@ -2,32 +2,32 @@ import express from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import bookRouter from "./routers/router.js";
-import cors from 'cors'
+import cors from "cors";
 
 const app = express();
 
 // converting the request into json formate so that use the data
-app.use(express.json());
+app.use(express.json());  
 
-// Allow all origin 
+// Allow all origin
 // app.use(cors())
 
 // allow specific origin
-app.use(cors({
-    origin: 'http://localhost:8881',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
-}))
-
+app.use(
+  cors({
+    origin: "http://localhost:8881",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 // setting up initial http route
-app.get("/", (request, response) => {
-  console.log(request);
+app.get("/", (_, response) => {
   return response.status(200).send("Hello World!");
 });
 
-app.use('/books', bookRouter)
-app.use('/laptop', bookRouter)
+app.use("/books", bookRouter);
+// app.use('/laptop', bookRouter)
 
 // using mongoose to connect with mongodb
 mongoose

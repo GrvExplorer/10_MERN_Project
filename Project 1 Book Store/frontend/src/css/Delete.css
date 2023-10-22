@@ -1,0 +1,41 @@
+/* Delete.css */
+.delete-container {
+    /* Your existing styles */
+    /* box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); Glowing red shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for glow effect */
+  }
+  
+  .delete-button, .cancel-button {
+    /* Your existing button styles */
+    transition: background-color 0.3s ease; /* Smooth transition for button hover */
+  }
+  
+  /* Hover effect for the delete button */
+  .cancel-button:hover {
+    background-color: black; 
+    color: white;
+  }
+
+  
+  /* Delete.css */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Define an animation for your delete container */
+  .delete-container {
+    animation: fadeIn 0.5s ease; /* Use the fadeIn animation with a duration of 0.5 seconds */
+    /* Other styles for your delete container */
+  }
+  
+  /* Define an animation for your delete button */
+  .delete-button {
+    animation: fadeIn 0.5s ease; /* Use the fadeIn animation with a duration of 0.5 seconds */
+    /* Other styles for your delete button */
+  }
+  
