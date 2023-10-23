@@ -1,18 +1,18 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home";
-import Edit from "./pages/Edit";
+import SingleCardView from "./home/SingleCardView";
 import Create from "./pages/Create";
 import Delete from "./pages/Delete";
+import Edit from "./pages/Edit";
+import Home from "./pages/Home";
 import Show from "./pages/Show";
-import { useEffect, useState } from "react";
-import SingleCardView from "./home/SingleCardView";
 
 function App() {
   const [userData, setUserData] = useState({
     title: "",
     author: "",
     publishYear: "",
+    description: "", 
   });
   const [isView, setView] = useState(true);
 
@@ -28,9 +28,8 @@ function App() {
           path="/books/edit/:id"
           element={<Edit userData={userData} setUserData={setUserData} />}
         />
-        <Route path="/books/show/:id" element={<Show />} />
+        <Route path="/books/show/:id" element={<Show userData={userData} setUserData={setUserData} />} />
         <Route path="/books/delete/:id/:title" element={<Delete />} />
-        <Route path="/books/singlecard/:id" element={<SingleCardView />} />
       </Routes>
     </>
   );

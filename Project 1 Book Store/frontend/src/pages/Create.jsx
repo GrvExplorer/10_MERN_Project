@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useSnackbar } from "notistack";
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
@@ -10,9 +10,6 @@ function Create({ userData, setUserData }) {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-
-  useReducer;
-
 
   useEffect(() => {
     setUserData({

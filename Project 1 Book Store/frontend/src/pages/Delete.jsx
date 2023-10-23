@@ -3,9 +3,8 @@ import { useSnackbar } from "notistack";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
-import { useEffect } from "react";
 import Spinner from "../components/Spinner";
-import "../css/Delete.css"; // Import a CSS file for your
+import "../css/Delete.css"; 
 
 function Delete() {
   const { id, title } = useParams();
