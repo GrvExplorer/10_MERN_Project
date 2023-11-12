@@ -4,7 +4,7 @@ import { memories } from "../models/model.js";
 
 const getAll = async (_, res) => {
   try {
-    const allMemories = await memories.find();
+    const allMemories = await memories.find({});
     return res.status(200).send(allMemories);
   } catch (err) {
     return res.status(404).send(err);
@@ -26,13 +26,15 @@ const getSpecific = async (req, res) => {
 
 const createSpecific = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.creator || !req.body.message) {
+    if (!req.body.title || !req.body.creator || !req.body.message || req.body.tags == '[]' ) {
       return res.status(400).send('All details are required')
     }
     const memorie = {
       title: req.body.title,
       message: req.body.message,
       creator: req.body.creator,
+      tags: req.body.tags,
+      likeCount: req.body.likeCount,
     }
     const createdMemorie = await memories.create(memorie)
     if (createdMemorie) {

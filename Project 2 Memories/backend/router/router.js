@@ -4,7 +4,7 @@ import { createSpecific, deleteSpecific, getAll, getSpecific, updateSpecific } f
 
 const router = express.Router()
 
-// get all
+// get all  
 router.get("/", getAll); 
 
 //get specific 

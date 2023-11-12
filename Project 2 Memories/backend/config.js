@@ -1,7 +1,7 @@
 export const PORT = 8880
 
 export const config_cors = {
-  origin: "http://localhost:8881/",
+  origin: "http://localhost:8881",  
   methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
   allowedHeaders: ['Content-Type']
 }
