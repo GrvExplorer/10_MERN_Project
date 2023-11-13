@@ -26,15 +26,16 @@ const getSpecific = async (req, res) => {
 
 const createSpecific = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.creator || !req.body.message || req.body.tags == '[]' ) {
+    if (!req.body.title || !req.body.creator || !req.body.message ) {
       return res.status(400).send('All details are required')
     }
     const memorie = {
       title: req.body.title,
-      message: req.body.message,
       creator: req.body.creator,
+      message: req.body.message,
       tags: req.body.tags,
       likeCount: req.body.likeCount,
+      selectedFile: "",
     }
     const createdMemorie = await memories.create(memorie)
     if (createdMemorie) {

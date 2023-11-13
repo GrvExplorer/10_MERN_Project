@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Box, Container, Flex, HStack, Heading, Image, VStack } from "@chakra-ui/react";
-import Form from './components/Form/Form'
+import {
+  Box,
+  Container,
+  Flex,
+  HStack,
+  Heading,
+  Image,
+  VStack,
+} from "@chakra-ui/react";
+import Form from "./components/Form/Form";
 
 import { getPosts } from "./action";
 import Posts from "./components/Posts/Posts";
@@ -15,15 +23,11 @@ function App() {
   }, [dispatch]);
 
   return (
-    <VStack
-    maxW={"8xl"}
-    gap={'20'}
-    m='auto'
-    >
+    <VStack maxW={"8xl"} gap={"20"} m="auto">
       <Container
-      maxW={"8xl"}
+        maxW={"8xl"}
         bg={"whiteAlpha.400"}
-        position={'static'}
+        position={"static"}
         display={"flex"}
         justifyContent={"center"}
         shadow={"xl"}
@@ -42,15 +46,16 @@ function App() {
           />
         </Flex>
       </Container>
-      <Box w='full' display={'flex'} 
-      justifyContent={'space-between'}
-      px={{md: '12'}}
+      <Box
+        w="full"
+        display={"flex"}
+        justifyContent={"space-between"}
+        px={{ md: "12" }}
       >
-     <Posts/>
+        <Posts />
 
-      <Form />
+        <Form />
       </Box>
-
     </VStack>
   );
 }

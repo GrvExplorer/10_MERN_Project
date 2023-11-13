@@ -2,8 +2,8 @@ import mongoose, { Schema } from "mongoose";
 
 const memories_schema = new Schema({
     title: String,
-    message: String,
     creator: String,
+    message: String,
     tags: [String],
     selectedFile: String,
     likeCount: {

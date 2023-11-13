@@ -8,10 +8,11 @@ import {
   IconButton,
   HStack,
   VStack,
+  Heading,
 } from "@chakra-ui/react";
 import { AiOutlineLike, AiOutlineDelete } from "react-icons/ai";
 
-const Card = ({v}) => {
+const Card = ({ v }) => {
   return (
     <Box
       maxW="400px"
@@ -32,19 +33,24 @@ const Card = ({v}) => {
         maxH="300px"
         objectFit="cover"
       />
-      <Box px="4" py='6'>
-      <Text fontSize={'md'} fontWeight={'medium'}>
-        ~{v.creator}
-      </Text>
+      <Box px="4" py="6">
+        <HStack justifyContent={"space-between"} pb={'8'}>
+          <Text as={"h1"} fontSize={"xl"} fontWeight={"medium"}>
+            {v.title}
+          </Text>
+          <Text fontSize={"md"} fontWeight={"medium"}>
+            ~{v.creator}
+          </Text>
+        </HStack>
         <Text mt="3" fontSize="xl" fontWeight="bold">
           {v.message}
         </Text>
         <Flex justify="space-between" mt="3">
-          <Flex maxW="151px" gap={'2'} flexWrap={"wrap"} overflowY={"hidden"}>
+          <Flex maxW="151px" gap={"2"} flexWrap={"wrap"} overflowY={"hidden"}>
             {v.tags.map((v, i) => (
-              <Tag  key={i} colorScheme="twitter" h='6' size="sm">
-              {v}
-            </Tag>
+              <Tag key={i} colorScheme="twitter" h="6" size="sm">
+                {v}
+              </Tag>
             ))}
             {/* <HStack mt="3" spacing="2">
               <Tag colorScheme="teal" size="sm">

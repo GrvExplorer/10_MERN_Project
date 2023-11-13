@@ -2,8 +2,8 @@ import express from "express";
 
 import { createSpecific, deleteSpecific, getAll, getSpecific, updateSpecific } from "../controllers/router_handler.js";
 
-const router = express.Router()
-
+const router = express.Router() 
+  
 // get all  
 router.get("/", getAll); 
 
