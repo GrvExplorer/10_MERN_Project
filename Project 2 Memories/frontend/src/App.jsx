@@ -53,7 +53,6 @@ function App() {
         px={{ md: "12" }}
       >
         <Posts />
-
         <Form />
       </Box>
     </VStack>

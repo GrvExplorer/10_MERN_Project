@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import ports from './ReducerFUN'
+import posts from './ReducerFUN'
 
 export default combineReducers({
-  ports,
+  posts,
 })

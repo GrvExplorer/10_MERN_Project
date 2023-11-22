@@ -5,7 +5,7 @@ import { Flex } from "@chakra-ui/react";
 
 function Posts() {
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
+
   return (
     <Flex flexWrap={'wrap'}>
       {posts.map((v, i) => (
